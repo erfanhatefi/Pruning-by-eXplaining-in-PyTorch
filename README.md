@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="docs/source/_static/PXP_logo_8x_transparent.png" width="400"/>
+</div>
+
+
 # Pruning By Explaining Revisited: Optimizing Attribution Methods to Prune CNNs and Transformers
 
 [![arXiv](https://img.shields.io/badge/arXiv-2408.12568-b31b1b.svg)](https://arxiv.org/abs/2408.12568)
