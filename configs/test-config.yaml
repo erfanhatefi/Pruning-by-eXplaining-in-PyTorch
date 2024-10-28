@@ -1,0 +1,68 @@
+random_seed: 0
+
+
+# Pruning Strategy
+# Options: Relevance, Random, IntGrad
+mode: Relevance
+init_relevance: 1
+# Optimization strategy according to paper
+low_level_hidden_layer_rule: Epsilon
+mid_level_hidden_layer_rule: Epsilon
+high_level_hidden_layer_rule: Epsilon
+fully_connected_layers_rule: Epsilon
+# LRP rule for Softmax according to AttnLRP paper
+softmax_rule: Epsilon
+# A parameter for the optimization process according to
+# paper, stating whether we should prioritize pruning
+# relevances near zero, or negatively large relevances
+abs_sort: true
+# Pruning Order (least_relevant_first or most_relevant_first)
+least_relevant_first: true
+# Type of Layer (or Component) to be pruned
+pruning_layer_type: Softmax
+# Whether to prune the subsequent layer or not
+# Options: Conv2d
+#          BatchNorm2d
+#          Both (Conv2d and the corresponding BatchNorm2d)
+#          Linear
+#          Softmax
+subsequent_layer_pruning: Both
+
+
+model_architecture: vit_b_16
+# Checkpoint path of model
+checkpoint_path: None
+# Restricting output of the model (simpling the task) according to paper
+domain_restriction_classes: 3
+
+
+validation_dataloader_batchsize: 8
+pruning_dataloader_batchsize: 1
+reference_samples_per_class: 10
+
+
+wandb: False
+wandb_api_key: 
+wandb_project_name: 
+
+pruning_rates:
+  - 0
+  - 0.05
+  - 0.1
+  - 0.15
+  - 0.2
+  - 0.25
+  - 0.3
+  - 0.35
+  - 0.4
+  - 0.45
+  - 0.5
+  - 0.55
+  - 0.6
+  - 0.65
+  - 0.7
+  - 0.75
+  - 0.8
+  - 0.85
+  - 0.9
+  - 0.95
