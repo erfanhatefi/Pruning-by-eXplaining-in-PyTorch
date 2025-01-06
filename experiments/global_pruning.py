@@ -132,7 +132,7 @@ def start(
             configs["model_architecture"], suggested_composite
         )
     else:
-        composite - get_cnn_composite(
+        composite = get_cnn_composite(
             configs["model_architecture"], suggested_composite
         )
 
